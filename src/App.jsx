@@ -1,10 +1,26 @@
 import { useState } from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Rootlayout from "./Component/Rootlayout";
+import Home from "./pages/Home";
+
 
 function App() {
+   const myRouter=createBrowserRouter(
+      createRoutesFromElements(
+        <Route element={< Rootlayout/>}>
+          <Route path="/" element={<Home />} />
+
+        </Route>
+      )
+    );
   return (
     <>
-      <h1 className="">Hello world!</h1>
-      <h2 className=" text-3xl text-center ">hey bro how are you</h2>
+      <RouterProvider router={myRouter}/>
     </>
   );
 }
