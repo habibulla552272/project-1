@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/large-removebg-preview.png";
+import logo from "./NavbarImg/large-removebg-preview.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -24,10 +24,15 @@ const Navbar = () => {
             </li>
             <li
               onClick={BasesArrow}
-              className="flex items-center gap-1 justify-center cursor-pointer "
+              // className="flex items-center gap-1 justify-center cursor-pointer "
             >
-              Buses
-              {basesArrow ? <IoIosArrowDown /> : <IoIosArrowUp />}
+              <Link
+                to="/buses"
+                className="flex items-center gap-1 justify-center cursor-pointer"
+              >
+                Buses
+                {basesArrow ? <IoIosArrowDown /> : <IoIosArrowUp />}
+              </Link>
             </li>
 
             <li></li>

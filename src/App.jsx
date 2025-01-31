@@ -5,22 +5,22 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Rootlayout from "./Component/Rootlayout";
+import Rootlayout from "./Component/RootLayout/Rootlayout";
 import Home from "./pages/Home";
-
+import Buses from "./pages/Buses";
 
 function App() {
-   const myRouter=createBrowserRouter(
-      createRoutesFromElements(
-        <Route element={< Rootlayout/>}>
-          <Route path="/" element={<Home />} />
-
-        </Route>
-      )
-    );
+  const myRouter = createBrowserRouter(
+    createRoutesFromElements(
+      <Route element={<Rootlayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/buses" element={<Buses />} />
+      </Route>
+    )
+  );
   return (
     <>
-      <RouterProvider router={myRouter}/>
+      <RouterProvider router={myRouter} />
     </>
   );
 }
